@@ -4,11 +4,15 @@
   <meta charset="UTF-8">
   <title>Arhiiv – Casus Belli</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- SAME CSS FILE -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<button class="hamburger" onclick="toggleSidebar()">☰</button>
+
+<aside class="sidebar" id="sidebar">
+  <!-- content will be copied here by JS -->
+</aside>
 
 <header class="site-header">
   <h1 class="site-title">
@@ -16,64 +20,257 @@
   </h1>
   <p class="site-subtitle">Rocca al Mare Kooli ajaleht</p>
 
-  <nav class="main-nav">
-    <a href="index.html">Avaleht</a>
-    <a href="#">Üritused</a>
-    <a href="#">Sport</a>
-    <a href="archive.html" class="active">Arhiiv</a>
-  </nav>
+  <form class="search-form" onsubmit="return false;">
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Otsi (nt: 2002 suvi, 2025 talv)">
+  </form>
 </header>
 
-<main class="archive-page">
+<main class="archive-wrapper">
+  <div class="archive">
 
-  <h2 class="archive-title">Arhiiv</h2>
-  <p class="archive-intro">
-    Casus Belli ilmumised alates 2002. aastast
-  </p>
+    <h2>Arhiiv</h2>
 
-  <!-- ===== YEAR ===== -->
-  <section class="archive-year">
-    <h3>2025</h3>
-    <ul>
-      <li><a href="#">Talv 2025 – Jõulunumber</a></li>
-      <li><a href="#">Kevad 2025</a></li>
-      <li><a href="#">Suvi 2025</a></li>
-    </ul>
-  </section>
+    <div class="archive-grid">
 
-  <section class="archive-year">
-    <h3>2024</h3>
-    <ul>
-      <li><a href="#">Talv 2024 – Jõulunumber</a></li>
-      <li><a href="#">Kevad 2024</a></li>
-      <li><a href="#">Suvi 2024</a></li>
-    </ul>
-  </section>
+      <!-- TEMPLATE:
+           data-search MUST contain "YEAR SEASON"
+      -->
 
-  <section class="archive-year">
-    <h3>2023</h3>
-    <ul>
-      <li><a href="#">Talv 2023 – Jõulunumber</a></li>
-      <li><a href="#">Kevad 2023</a></li>
-      <li><a href="#">Suvi 2023</a></li>
-    </ul>
-  </section>
+      <section class="archive-year">
+        <h3>2025</h3>
+        <ul>
+          <li><a href="issue-2025-talv.html" class="searchable" data-search="2025 talv">Talv</a></li>
+          <li><a href="issue-2025-kevad.html" class="searchable" data-search="2025 kevad">Kevad</a></li>
+          <li><a href="issue-2025-suvi.html" class="searchable" data-search="2025 suvi">Suvi</a></li>
+        </ul>
+      </section>
 
-  <!-- COPY THIS BLOCK DOWN TO 2002 -->
-  <section class="archive-year">
-    <h3>2002</h3>
-    <ul>
-      <li><a href="#">Talv 2002 – Jõulunumber</a></li>
-      <li><a href="#">Kevad 2002</a></li>
-      <li><a href="#">Suvi 2002</a></li>
-    </ul>
-  </section>
+      <section class="archive-year">
+        <h3>2024</h3>
+        <ul>
+          <li><a href="issue-2024-talv.html" class="searchable" data-search="2024 talv">Talv</a></li>
+          <li><a href="issue-2024-kevad.html" class="searchable" data-search="2024 kevad">Kevad</a></li>
+          <li><a href="issue-2024-suvi.html" class="searchable" data-search="2024 suvi">Suvi</a></li>
+        </ul>
+      </section>
 
+      <section class="archive-year">
+        <h3>2023</h3>
+        <ul>
+          <li><a href="issue-2023-talv.html" class="searchable" data-search="2023 talv">Talv</a></li>
+          <li><a href="issue-2023-kevad.html" class="searchable" data-search="2023 kevad">Kevad</a></li>
+          <li><a href="issue-2023-suvi.html" class="searchable" data-search="2023 suvi">Suvi</a></li>
+        </ul>
+      </section>
+
+      <section class="archive-year">
+        <h3>2022</h3>
+        <ul>
+          <li><a href="issue-2022-talv.html" class="searchable" data-search="2022 talv">Talv</a></li>
+          <li><a href="issue-2022-kevad.html" class="searchable" data-search="2022 kevad">Kevad</a></li>
+          <li><a href="issue-2022-suvi.html" class="searchable" data-search="2022 suvi">Suvi</a></li>
+        </ul>
+      </section>
+
+      <section class="archive-year">
+        <h3>2021</h3>
+        <ul>
+          <li><a href="issue-2021-talv.html" class="searchable" data-search="2021 talv">Talv</a></li>
+          <li><a href="issue-2021-kevad.html" class="searchable" data-search="2021 kevad">Kevad</a></li>
+          <li><a href="issue-2021-suvi.html" class="searchable" data-search="2021 suvi">Suvi</a></li>
+        </ul>
+      </section>
+
+      <section class="archive-year">
+        <h3>2020</h3>
+        <ul>
+          <li><a href="issue-2020-talv.html" class="searchable" data-search="2020 talv">Talv</a></li>
+          <li><a href="issue-2020-kevad.html" class="searchable" data-search="2020 kevad">Kevad</a></li>
+          <li><a href="issue-2020-suvi.html" class="searchable" data-search="2020 suvi">Suvi</a></li>
+        </ul>
+      </section>
+
+      <section class="archive-year">
+        <h3>2019</h3>
+        <ul>
+          <li><a href="issue-2019-talv.html" class="searchable" data-search="2019 talv">Talv</a></li>
+          <li><a href="issue-2019-kevad.html" class="searchable" data-search="2019 kevad">Kevad</a></li>
+          <li><a href="issue-2019-suvi.html" class="searchable" data-search="2019 suvi">Suvi</a></li>
+        </ul>
+      </section>
+
+      <section class="archive-year">
+        <h3>2018</h3>
+        <ul>
+          <li><a href="issue-2018-talv.html" class="searchable" data-search="2018 talv">Talv</a></li>
+          <li><a href="issue-2018-kevad.html" class="searchable" data-search="2018 kevad">Kevad</a></li>
+          <li><a href="issue-2018-suvi.html" class="searchable" data-search="2018 suvi">Suvi</a></li>
+        </ul>
+      </section>
+
+      <section class="archive-year">
+        <h3>2017</h3>
+        <ul>
+          <li><a href="issue-2017-talv.html" class="searchable" data-search="2017 talv">Talv</a></li>
+          <li><a href="issue-2017-kevad.html" class="searchable" data-search="2017 kevad">Kevad</a></li>
+          <li><a href="issue-2017-suvi.html" class="searchable" data-search="2017 suvi">Suvi</a></li>
+        </ul>
+      </section>
+
+      <section class="archive-year">
+        <h3>2016</h3>
+        <ul>
+          <li><a href="issue-2016-talv.html" class="searchable" data-search="2016 talv">Talv</a></li>
+          <li><a href="issue-2016-kevad.html" class="searchable" data-search="2016 kevad">Kevad</a></li>
+          <li><a href="issue-2016-suvi.html" class="searchable" data-search="2016 suvi">Suvi</a></li>
+        </ul>
+      </section>
+
+      <section class="archive-year">
+        <h3>2015</h3>
+        <ul>
+          <li><a href="issue-2015-talv.html" class="searchable" data-search="2015 talv">Talv</a></li>
+          <li><a href="issue-2015-kevad.html" class="searchable" data-search="2015 kevad">Kevad</a></li>
+          <li><a href="issue-2015-suvi.html" class="searchable" data-search="2015 suvi">Suvi</a></li>
+        </ul>
+      </section>
+
+      <section class="archive-year">
+        <h3>2014</h3>
+        <ul>
+          <li><a href="issue-2014-talv.html" class="searchable" data-search="2014 talv">Talv</a></li>
+          <li><a href="issue-2014-kevad.html" class="searchable" data-search="2014 kevad">Kevad</a></li>
+          <li><a href="issue-2014-suvi.html" class="searchable" data-search="2014 suvi">Suvi</a></li>
+        </ul>
+      </section>
+
+      <section class="archive-year">
+        <h3>2013</h3>
+        <ul>
+          <li><a href="issue-2013-talv.html" class="searchable" data-search="2013 talv">Talv</a></li>
+          <li><a href="issue-2013-kevad.html" class="searchable" data-search="2013 kevad">Kevad</a></li>
+          <li><a href="issue-2013-suvi.html" class="searchable" data-search="2013 suvi">Suvi</a></li>
+        </ul>
+      </section>
+
+      <section class="archive-year">
+        <h3>2012</h3>
+        <ul>
+          <li><a href="issue-2012-talv.html" class="searchable" data-search="2012 talv">Talv</a></li>
+          <li><a href="issue-2012-kevad.html" class="searchable" data-search="2012 kevad">Kevad</a></li>
+          <li><a href="issue-2012-suvi.html" class="searchable" data-search="2012 suvi">Suvi</a></li>
+        </ul>
+      </section>
+
+      <section class="archive-year">
+        <h3>2011</h3>
+        <ul>
+          <li><a href="issue-2011-talv.html" class="searchable" data-search="2011 talv">Talv</a></li>
+          <li><a href="issue-2011-kevad.html" class="searchable" data-search="2011 kevad">Kevad</a></li>
+          <li><a href="issue-2011-suvi.html" class="searchable" data-search="2011 suvi">Suvi</a></li>
+        </ul>
+      </section>
+
+      <section class="archive-year">
+        <h3>2010</h3>
+        <ul>
+          <li><a href="issue-2010-talv.html" class="searchable" data-search="2010 talv">Talv</a></li>
+          <li><a href="issue-2010-kevad.html" class="searchable" data-search="2010 kevad">Kevad</a></li>
+          <li><a href="issue-2010-suvi.html" class="searchable" data-search="2010 suvi">Suvi</a></li>
+        </ul>
+      </section>
+
+      <section class="archive-year">
+        <h3>2009</h3>
+        <ul>
+          <li><a href="issue-2009-talv.html" class="searchable" data-search="2009 talv">Talv</a></li>
+          <li><a href="issue-2009-kevad.html" class="searchable" data-search="2009 kevad">Kevad</a></li>
+          <li><a href="issue-2009-suvi.html" class="searchable" data-search="2009 suvi">Suvi</a></li>
+        </ul>
+      </section>
+
+      <section class="archive-year">
+        <h3>2008</h3>
+        <ul>
+          <li><a href="issue-2008-talv.html" class="searchable" data-search="2008 talv">Talv</a></li>
+          <li><a href="issue-2008-kevad.html" class="searchable" data-search="2008 kevad">Kevad</a></li>
+          <li><a href="issue-2008-suvi.html" class="searchable" data-search="2008 suvi">Suvi</a></li>
+        </ul>
+      </section>
+
+      <section class="archive-year">
+        <h3>2007</h3>
+        <ul>
+          <li><a href="issue-2007-talv.html" class="searchable" data-search="2007 talv">Talv</a></li>
+          <li><a href="issue-2007-kevad.html" class="searchable" data-search="2007 kevad">Kevad</a></li>
+          <li><a href="issue-2007-suvi.html" class="searchable" data-search="2007 suvi">Suvi</a></li>
+        </ul>
+      </section>
+
+      <section class="archive-year">
+        <h3>2006</h3>
+        <ul>
+          <li><a href="issue-2006-talv.html" class="searchable" data-search="2006 talv">Talv</a></li>
+          <li><a href="issue-2006-kevad.html" class="searchable" data-search="2006 kevad">Kevad</a></li>
+          <li><a href="issue-2006-suvi.html" class="searchable" data-search="2006 suvi">Suvi</a></li>
+        </ul>
+      </section>
+
+      <section class="archive-year">
+        <h3>2005</h3>
+        <ul>
+          <li><a href="issue-2005-talv.html" class="searchable" data-search="2005 talv">Talv</a></li>
+          <li><a href="issue-2005-kevad.html" class="searchable" data-search="2005 kevad">Kevad</a></li>
+          <li><a href="issue-2005-suvi.html" class="searchable" data-search="2005 suvi">Suvi</a></li>
+        </ul>
+      </section>
+
+      <section class="archive-year">
+        <h3>2004</h3>
+        <ul>
+          <li><a href="issue-2004-talv.html" class="searchable" data-search="2004 talv">Talv</a></li>
+          <li><a href="issue-2004-kevad.html" class="searchable" data-search="2004 kevad">Kevad</a></li>
+          <li><a href="issue-2004-suvi.html" class="searchable" data-search="2004 suvi">Suvi</a></li>
+        </ul>
+      </section>
+
+      <section class="archive-year">
+        <h3>2003</h3>
+        <ul>
+          <li><a href="issue-2003-talv.html" class="searchable" data-search="2003 talv">Talv</a></li>
+          <li><a href="issue-2003-kevad.html" class="searchable" data-search="2003 kevad">Kevad</a></li>
+          <li><a href="issue-2003-suvi.html" class="searchable" data-search="2003 suvi">Suvi</a></li>
+        </ul>
+      </section>
+
+      <section class="archive-year">
+        <h3>2002</h3>
+        <ul>
+          <li><a href="issue-2002-talv.html" class="searchable" data-search="2002 talv">Talv</a></li>
+          <li><a href="issue-2002-kevad.html" class="searchable" data-search="2002 kevad">Kevad</a></li>
+          <li><a href="issue-2002-suvi.html" class="searchable" data-search="2002 suvi">Suvi</a></li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
 </main>
+
+  <aside class="sidebar-desktop" id="latestSidebar">
+    <h3>Viimased</h3>
+    <ul>
+      <li><a href="article.html">Tehnika areng rikub suhted</a></li>
+    </ul>
+  </aside>
 
 <footer class="site-footer">
   © Casus Belli – Rocca al Mare Kool
 </footer>
 
+<script src="search.js"></script>
+<script src="sidebar.js"></script>
 </body>
 </html>

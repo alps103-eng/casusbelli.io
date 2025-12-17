@@ -1,29 +1,19 @@
 <!DOCTYPE html>
 <html lang="et">
 <head>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Casus Belli</title>
-
-  <!-- Main stylesheet -->
+  <title>Casus Belli – Rocca al Mare Kooli ajaleht</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- MOBILE HAMBURGER -->
 <button class="hamburger" onclick="toggleSidebar()">☰</button>
 
-<!-- MOBILE SIDEBAR -->
 <aside class="sidebar" id="sidebar">
-  <h3>Viimased</h3>
-  <ul>
-    <li><a href="#">RaM Tants</a></li>
-    <li><a href="#">Intervjuu õpetajaga</a></li>
-    <li><a href="#">Õpilasesinduse uudised</a></li>
-  </ul>
+  <!-- content will be copied here by JS -->
 </aside>
 
-<!-- HEADER -->
 <header class="site-header">
   <h1 class="site-title">
     <a href="index.html">CASUS BELLI</a>
@@ -39,61 +29,38 @@
 
   <form class="search-form" onsubmit="return false;">
     <input type="text" id="searchInput" placeholder="Otsi artikleid…">
-    <button type="button">🔍</button>
   </form>
 </header>
 
-<!-- MAIN LAYOUT -->
 <main class="layout">
-
-  <!-- ARTICLES -->
-  <section class="articles" id="articles">
+  <section class="articles">
 
     <article class="article-preview">
       <h2>
         <a href="article.html">
-          Transpordiamet plaanib madalamat piirkiirust
+          Tehnika areng rikub suhted
         </a>
       </h2>
-      <p>Lühike sissejuhatus artiklile…</p>
-    </article>
-
-    <article class="article-preview">
-      <h2>
-        <a href="article.html">RaM Tantsu võitjad taas 27.lend</a>
-      </h2>
-      <p>Koolipere kogunes vaatama RaM Tantsu esitlust…</p>
-    </article>
-
-    <article class="article-preview">
-      <h2>
-        <a href="article.html">Kevadised spordivõistlused</a>
-      </h2>
-      <p>Õpilased osalesid erinevatel aladel ja turniiridel…</p>
+      <p class="excerpt">
+        Arvamuslugu tehnoloogia mõjust inimestevahelistele suhetele.
+      </p>
     </article>
 
   </section>
 
-  <!-- DESKTOP SIDEBAR -->
-  <aside class="sidebar-desktop">
+  <aside class="sidebar-desktop" id="latestSidebar">
     <h3>Viimased</h3>
     <ul>
-      <li><a href="#">RaM Tants</a></li>
-      <li><a href="#">Intervjuu õpetajaga</a></li>
-      <li><a href="#">Õpilasesinduse uudised</a></li>
+      <li><a href="article.html">Tehnika areng rikub suhted</a></li>
     </ul>
   </aside>
-
 </main>
 
-<!-- FOOTER -->
 <footer class="site-footer">
   © Casus Belli – Rocca al Mare Kool
 </footer>
 
-<!-- JS -->
-<script src="sidebar.js"></script>
 <script src="search.js"></script>
-
+<script src="sidebar.js"></script>
 </body>
 </html>
